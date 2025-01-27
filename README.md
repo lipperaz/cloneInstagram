@@ -11,7 +11,7 @@ Este é um projeto de um clone do Instagram, desenvolvido com Node.js no backend
  
 ## 🛠️ Tecnologias Usadas:
 - Backend: Node.js, Express, MongoDB, JWT (JSON Web Token), bcrypt
-- Frontend: React, Redux (opcional para gerenciamento de estado)
+- Frontend: React
 - Banco de dados: MongoDB
 - Autenticação: JWT para gerenciamento de sessões de usuário
-- Estilização: CSS, Material-UI ou Tailwind CSS (dependendo da sua escolha)
+- Estilização: CSS e Material-UI
