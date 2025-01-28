@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken")
 const jwtSecret = process.env.JWT_PASSWORD
 
 const authSec = async (req, res, next) => {
-
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
 
@@ -16,9 +15,9 @@ const authSec = async (req, res, next) => {
         req.user = await User.findById(verified.id).select("-password")
         next();
 
-    } catch (error) {
-        res.status(401).json({error: ["Token invalido!"]})
+    } catch (errors) {
+        res.status(401).json({errors: ["Token invalido!"]})
     }
 };
 
-module.exports = authSec
+module.exports = authSec;
