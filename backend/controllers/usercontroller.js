@@ -67,14 +67,16 @@ const login = async (req, res) => {
         return
     }
 
-    // Return Token
+    // Return with Token
     res.status(201).json({
         _id: user._id,
         profileImage: user.profileImage,
         token: generateToken(user._id),
     });
-
 }
+
+// Get current user
+
 
 module.exports = {
     register,
