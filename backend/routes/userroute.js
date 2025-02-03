@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // Controller
-const {register, login, getCurrentUser, update} = require("../controllers/usercontroller");
+const {register, login, getCurrentUser, update, getUserById} = require("../controllers/usercontroller");
 
 // Middleware
 const validate = require("../middlewares/handlevalidation");
@@ -15,5 +15,6 @@ router.post("/register", userCreateValidation(), validate, register);
 router.post("/login", loginValidation(), validate, login);
 router.get("/profile", authSec, getCurrentUser);
 router.put("/", authSec, userUpdateValidation(), validate, imageUpload.single("profileImage"), update);
+router.get("/:id", getUserById);
 
 module.exports = router;
